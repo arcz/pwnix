@@ -5,6 +5,7 @@ let pkgs = import <nixpkgs> {};
       pwntools
       ropper
     ]);
+    vmlinux-to-elf = pkgs.python3Packages.callPackage (import ./vmlinux-to-elf.nix) {};
 in
 with pkgs;
 pkgs.buildEnv {
@@ -13,5 +14,6 @@ pkgs.buildEnv {
     gdbWithPlugins
     pythonWithPackages
     one_gadget
+    vmlinux-to-elf
   ];
 }
