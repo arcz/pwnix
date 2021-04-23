@@ -6,14 +6,19 @@ let pkgs = import <nixpkgs> {};
       ropper
     ]);
     vmlinux-to-elf = pkgs.python3Packages.callPackage (import ./vmlinux-to-elf.nix) {};
-in
-with pkgs;
-pkgs.buildEnv {
-  name = "pwnix";
-  paths = [
-    gdbWithPlugins
-    pythonWithPackages
-    one_gadget
-    vmlinux-to-elf
-  ];
-}
+    onPath = with pkgs; [
+      gdbWithPlugins
+      pythonWithPackages
+      one_gadget
+      vmlinux-to-elf
+      patchelf
+    ];
+in if pkgs.lib.inNixShell then
+  pkgs.mkShell {
+    buildInputs = onPath;
+  }
+else
+  pkgs.buildEnv {
+    name = "pwnix";
+    paths = onPath;
+  }
