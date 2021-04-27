@@ -4,6 +4,8 @@ let pkgs = import <nixpkgs> {};
       ipython
       pwntools
       ropper
+      ROPGadget
+      z3
     ]);
     vmlinux-to-elf = pkgs.python3Packages.callPackage (import ./vmlinux-to-elf.nix) {};
     onPath = with pkgs; [
