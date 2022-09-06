@@ -17,11 +17,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1661419726,
-        "narHash": "sha256-Rdoq4DyGpsJiBuEDUN6xD62oyZLxoue7cVJX+duO4bU=",
+        "lastModified": 1662464342,
+        "narHash": "sha256-ejO1ZMKc0UXHAVNc5vaCbK6Yy3JOEKvwPAOZGQsdp+c=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "ada79f07205f0732383544010d8bcc241cdc1b4f",
+        "rev": "d219ba6f9908c0f253e6b2a4fc8d2b07e2a806b2",
         "type": "github"
       },
       "original": {
@@ -30,10 +30,27 @@
         "type": "github"
       }
     },
+    "pwndbg-repo": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1662458270,
+        "narHash": "sha256-3QqXflRf6NAROB2MCLqzAcJJhw1/ld3PoBWSN4lDyTE=",
+        "owner": "pwndbg",
+        "repo": "pwndbg",
+        "rev": "869366bbf7f38adb39b4a63838786011c6739b9c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "pwndbg",
+        "repo": "pwndbg",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "flake-utils": "flake-utils",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "pwndbg-repo": "pwndbg-repo"
       }
     }
   },
