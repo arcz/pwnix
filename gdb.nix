@@ -35,4 +35,6 @@ in stdenv.mkDerivation rec {
       --add-flags "-q -x $out/share/pwndbg/gdbinit.py" \
       --set NIX_PYTHONPATH ${pythonPath}
   '';
+
+  meta.mainProgram = "gdb";
 }
