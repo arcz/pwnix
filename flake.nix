@@ -17,7 +17,7 @@
       in {
         packages.pwndbg = pkgs.callPackage (import ./gdb.nix) { inherit pwndbg-repo; };
         devShells.pwndbg = pkgs.mkShell {
-          buildInputs = with pkgs; [ gdb git py ];
+          buildInputs = with pkgs; [ gdb git py glibcLocales ];
           # gdb doesn't pick up our python with deps from path, set explicitly
           NIX_PYTHONPATH = "${py}/${py.sitePackages}";
         };
